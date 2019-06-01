@@ -1,0 +1,83 @@
+HOME directory:
+
+/Users/Maria/.local/bin
+Remove the adapt sequence from sequencing fastq gz file
+Install cutadapt with pip3
+Export the cut adapt to current home directory
+Run cut adapt program by assigning output file name (gz or fq) and input file (fq or gz)
+Examine the changes of uncapped file by comparing to the original file using zless command :zless reads.fq.gz
+
+Sequence Length Distribution From A Fastq File
+
+cat /Users/Maria/Desktop/XGAO/sickle.fq | awk '{if(NR%4==2) print length($1)}' | sort -n | uniq -c > sickle_length.txt
+Quick plot in R:
+reads<-read.csv(file="read_length.txt", sep="", header=FALSE)
+plot (reads$V2,reads$V1,type="l",xlab="read length",ylab="occurences",col="blue")
+
+
+
+export PATH=/Users/Maria/Library//Python/3.7/lib/python/site-packages/ :$/Users/Maria/.local/bin
+
+export PATH=/Users/Maria/Library/Python/3.7/bin/:$/Users/Maria/.local/bin
+-a ADAPTER
+
+cutadapt -a AAC -o sickle.fq.gz /Users/Maria/Desktop/XGAO/ctl_sickle.fq.gz
+
+
+GATCGGAAGAGCACACGTCTGAACTCCAGTC
+
+TAGNNN
+cutadapt -g TAGNNN -o /Users/Maria/Desktop/XGAO/sickle.fq.gz /Users/Maria/Desktop/XGAO/ctl_sickle.fq.gz
+
+gzip -l /Users/Maria/Desktop/XGAO/ctl_sickle.fq.gz
+
+tar -xzf /Users/Maria/Desktop/XGAO/ctl_sickle.fq.gz --to-stdout|wc -c
+
+
+
+
+cat /Users/Maria/Desktop/XGAO/sickle.fq | awk '{if(NR%4==2) print length($1)}' | sort -n | uniq -c > read_length.txt
+
+reads<-read.csv(file="read_length.txt", sep="", header=FALSE)
+plot (reads$V2,reads$V1,type="l",xlab="read length",ylab="occurences",col="blue")
+
+cat /Users/Maria/Desktop/XGAO/ctl_sickle.fq | awk '{if(NR%4==2) print length($1)}' | sort -n | uniq -c > sickle_length.txt
+
+
+Mapping reads with mouse genome
+
+Download the mouse genome from ucsc with wget or curl or rsync
+
+curl -o /Users/Maria/Desktop/XGAO/decapped/ http://hgdownload.cse.ucsc.edu/goldenPath/mm10/bigZips/mm10.2bit
+
+2. Convert .bt2 file to fasta formate used for building index 
+Download Twobittofa 
+$chmod 744 twoBitToFa./twobittofa filenanme.2bit newname.fasta # REMEMBER ./ TO BE INCLUDED IN THE CODE
+
+
+3. Build index with Bowtie2  
+
+
+Install bowtie2 from the Bowtie website
+# add location to system PATH
+$PATH=$PATH:/Users/Maria/Desktop/XGAO/map_seq/bowtie2
+	3 run the "bowtie2-build" command
+$bowtie2-build /Users/Maria/Desktop/XGAO/map_seq/mrna.fa mmrna
+This command will create 6 files with a *.bt2 file extension.  These will then be used by bowtie2 or newer versions of tophat to map data.
+4. Run alignment
+$ bowtie2 -p 4 -x mmrna /Users/Maria/Desktop/XGAO/decapped/decapped5_3_sickle.fq > ctl_sickle.sam
+
+Results:
+
+26677391 reads; of these:
+  26677391 (100.00%) were unpaired; of these:
+    2377056 (8.91%) aligned 0 times
+    322285 (1.21%) aligned exactly 1 time
+    23978050 (89.88%) aligned >1 times
+91.09% overall alignment rate
+
+
+
+
+
+
