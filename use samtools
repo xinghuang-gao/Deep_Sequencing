@@ -33,6 +33,9 @@ $samtools sort filename_unsorted.bam filename_sorted #.bam extension will be inc
 #to index a postion-sorted BAM file, SAM files can not be indexed.
 $samtools index filename_sorted.bam #creat a file named filename_sorted.bam.bai, contains the index.
 
+# view the alignment data with samtools tview. IGV from Broad can be also used for visulizing alignments.
+#samtool tview requries to use sorted BAM file as input
+$samtools tview filename_sorted.bam
 
 
 
