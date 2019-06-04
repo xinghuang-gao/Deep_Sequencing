@@ -35,7 +35,6 @@ tar -xzf /Users/Maria/Desktop/XGAO/ctl_sickle.fq.gz --to-stdout|wc -c
 
 
 
-
 cat /Users/Maria/Desktop/XGAO/sickle.fq | awk '{if(NR%4==2) print length($1)}' | sort -n | uniq -c > read_length.txt
 
 reads<-read.csv(file="read_length.txt", sep="", header=FALSE)
@@ -61,8 +60,8 @@ $chmod 744 twoBitToFa./twobittofa filenanme.2bit newname.fasta # REMEMBER ./ TO 
 Install bowtie2 from the Bowtie website
 # add location to system PATH
 $PATH=$PATH:/Users/Maria/Desktop/XGAO/map_seq/bowtie2
-	3 run the "bowtie2-build" command
-$bowtie2-build /Users/Maria/Desktop/XGAO/map_seq/mrna.fa mmrna
+# run the "bowtie2-build" command
+$bowtie2-build /Users/Maria/Desktop/XGAO/map_seq/mrna.fasta mmrna
 This command will create 6 files with a *.bt2 file extension.  These will then be used by bowtie2 or newer versions of tophat to map data.
 4. Run alignment
 $ bowtie2 -p 4 -x mmrna /Users/Maria/Desktop/XGAO/decapped/decapped5_3_sickle.fq > ctl_sickle.sam
