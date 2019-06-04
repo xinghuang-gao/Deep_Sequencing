@@ -26,7 +26,7 @@ $samtools view filename.bam > filename_copy.sam
 
 # sort and index
 # These allow for faster access to reads aligned within a certain region.
-$samtools sort filename_unsorted.bam filename_sorted #.bam extension will be included by sort
+$samtools sort filename_unsorted.bam -o filename_sorted #.bam extension will be included by sort
 
 # postion-sorted BAM files are the starting points for SNP calling and extracting alignments from specific regions.
 
