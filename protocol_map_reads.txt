@@ -63,7 +63,7 @@ This command will create 6 files with a *.bt2 file extension.  These will then b
 1. obtain a fasta file from mouse genome named as mm10_rRNA.fa.
 
 2. build bowtie2 index
-$ bowtie2-build species_rRNA species_rRNA.fa
+$ bowtie2-build species_rRNA species_rRNA.fa filename
 
 3. bowtie2-build species_rRNA species_rRNA.fa. align the data, discarding any reads mapping to the rRNA saving those called my_reads_rRNA_unalign.fq
 
