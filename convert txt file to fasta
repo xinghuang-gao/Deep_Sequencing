@@ -1,0 +1,2 @@
+#save gene sequence as Plain Text Format (.txt) (paste the selected sequences to EMBL Fasta converter, then choice convert to fasta)
+$awk '{ if ( $0 ~ /^gi/ ) {gsub(" ","_",$0); print ">"$0 } else { print } }'in.txt > out.fasta
