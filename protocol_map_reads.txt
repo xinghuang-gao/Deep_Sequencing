@@ -15,11 +15,9 @@ reads<-read.csv(file="read_length.txt", sep="", header=FALSE)
 plot (reads$V2,reads$V1,type="l",xlab="read length",ylab="occurences",col="blue")
 
 
+#add a new path
+PATH=$PATH:/Users/Maria/Library/Python/3.7/bin/
 
-export PATH=/Users/Maria/Library//Python/3.7/lib/python/site-packages/ :$/Users/Maria/.local/bin
-
-export PATH=/Users/Maria/Library/Python/3.7/bin/:$/Users/Maria/.local/bin
--a ADAPTER
 
 cutadapt -a AAC -o sickle.fq.gz /Users/Maria/Desktop/XGAO/ctl_sickle.fq.gz
 
