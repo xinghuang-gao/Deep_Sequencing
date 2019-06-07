@@ -72,7 +72,7 @@ $ bowtie -p4 -v3 species_rRNA my_reads.fastq \
 
 
 Run alignment
-$ bowtie2 -p 4 -x mmrna /Users/Maria/Desktop/XGAO/decapped/decapped5_3_sickle.fq > ctl_sickle.sam
+$ bowtie2 -p4 -x mmrna /Users/Maria/Desktop/XGAO/decapped/decapped5_3_sickle.fq > ctl_sickle.sam
 
 
 
