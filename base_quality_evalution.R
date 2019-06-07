@@ -14,9 +14,7 @@ bioClite('qrqc')
 # trim_qual.r
 library(qrqc)
 #FASTQ filles
-fqfiles <- c(none ="control.fq.gz",
-sickle = "ctl_sickle.fq.gz",
-trimfq = "ctl_trimfq.fq.gz")
+fqfiles <- c(none ="~/control.fq.gz", sickle = "~/ctl_sickle.fq.gz", trimfq = "~/ctl_trimfq.fq.gz")
 
 
 #load each file in using qrqc readseqfile
