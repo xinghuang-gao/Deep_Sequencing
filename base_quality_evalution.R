@@ -6,10 +6,10 @@ bioClite('qrqc')
 #go to the terminal to install seqtk and sickle used to trim low-quality bases
 # $brew install seqtk and brew install sickle
 # trim the assigned fastq.gz file by sickle running in the terminal
-#$ sickle se -f ~/contorl.fq.gz -t sanger -o ctl_sickle.fq.gz
+#$ sickle se -f ~/contorl.fq -t sanger -o ctl_sickle.fq
 # trim the assigned fastq.gz file by trimfq running in the terminal
-# $ seqtk trimfq control.fq.gz > ctl_trimfq.fq.gz
-
+# $ seqtk trimfq control.fq > ctl_trimfq.fq #cannot use gz compressed files, gz file needs to be decompressed by gunzip in the terminal.
+# $gzip file.fq
 #compre these results in R 
 # trim_qual.r
 library(qrqc)
