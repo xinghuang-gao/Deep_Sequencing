@@ -15,6 +15,10 @@ $ htseq-count --help
 # to check if the install is successful
 $ python
 >import numpy
-> import pysam
-> import matplotlib
-> import HTSeq
+>import pysam
+>import matplotlib
+>import HTSeq
+
+# filter the sorted bam files for mapped reads using samtools.
+$samtools view -b -F 4 sorted_file.bam>mapped_sorted_file.bam
+
