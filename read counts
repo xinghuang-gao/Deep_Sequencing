@@ -25,3 +25,6 @@ $samtools view -b -F 4 sorted_file.bam>mapped_sorted_file.bam
 #run HTSeq python lib to count reads for each mapped gene from sorted bam file
 
 $ htseq-count -f bam --stranded=no mapped_sorted_file.bam ~/Mus_musculus.GRCm38.96.gtf >read_counts.txt
+
+# combine count files from different samples to a table using join statement
+$join counts1.txt counts2.txt>count_talbe.txt
