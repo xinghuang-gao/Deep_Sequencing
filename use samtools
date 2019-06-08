@@ -15,6 +15,14 @@ $PATH=$PATH:/Users/xing-huanggao/samtools-1.9
 $source.bash_profile # immediately refresh bash profile and run samtools
 $samtools view
 
+#eavluate mapping quality, use RseQc python-based package, -i as input
+$ bam_stat.py  -i /Users/Maria/Desktop/XGAO-newimac/map_seq/sam/ctl_aligned_trim_sickle.sam > /Users/Maria/Desktop/XGAO-newimac/map_seq/sam/mq_700.txt
+
+# list how many reads map to each chromosome
+$samtools idxstats alignments.sorted.bam
+
+#filter alignents based on mapping quality. the following keeps alignments which have mapping quality higher than 20 (1% mismatched)
+$samtools view -b -q 30 –o alignments_MQmin30.bam alignments.bam
 # look at SAM/BAM header 
 $samtools view -H ~/filename.sam
 
