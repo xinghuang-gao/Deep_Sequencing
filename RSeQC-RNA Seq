@@ -1,0 +1,2 @@
+# An RNA-seq Quality Control Package to evaluate HTS sequencing data
+# modules evaluate sequencing saturation, mapped reads distribution, coverage uniformity, strand specificity, transcript level RNA integrity
