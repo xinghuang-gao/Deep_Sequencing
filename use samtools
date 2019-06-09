@@ -12,7 +12,7 @@ $make install
 $.samtools--help #read help documents
 # change the enviroment variable, configure the path as following PATH=$PATH:<PATH 1>:<PATH 2>:<PATH 3>:------:<PATH N>
 $PATH=$PATH:/Users/xing-huanggao/samtools-1.9
-$source.bash_profile # immediately refresh bash profile and run samtools
+$source .bash_profile # immediately refresh bash profile and run samtools
 $samtools view
 
 #eavluate mapping quality, use RseQc python-based package, -i as input
