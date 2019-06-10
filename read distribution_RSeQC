@@ -1,0 +1,1 @@
+read_distribution.py -i /Users/xing-huanggao/Desktop/Undefined/data_analysis/Sequencing_data/bam/count_reads/mapped_700_copy.bam -r /Users/xing-huanggao/Desktop/Undefined/data_analysis/Sequencing_data/bam/gff/mm9_Ensembl_gene.bed
